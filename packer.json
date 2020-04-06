@@ -51,14 +51,19 @@
         },
         {
             "type": "shell",
-            "script": "scripts/cleanup.sh"
-        },
-        {
-            "type": "shell",
             "inline": [
                 "sudo yum -y -x docker\\* -x ecs\\* update",
                 "sudo yum -y install aws-cfn-bootstrap awslogs jq"
             ]
+        },
+        {
+            "type": "shell",
+            "script": "scripts/cleanup.sh"
+        },
+        {
+            "type": "file",
+            "source": "files/firstrun.sh",
+            "destination": "/home/ec2-user/firstrun.sh"
         }
     ],
     "post-processors": [

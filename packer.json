@@ -47,6 +47,10 @@
         },
         {
             "type": "shell",
+            "script": "scripts/cloudinit.sh"
+        },
+        {
+            "type": "shell",
             "inline": [
                 "sudo yum -y -x docker\\* -x ecs\\* update",
                 "sudo yum -y install aws-cfn-bootstrap awslogs jq"

@@ -15,4 +15,5 @@ sudo ln -sf /usr/share/zoneinfo/"$TIMEZONE" /etc/localtime
 echo "server 169.254.169.123 prefer iburst" | sudo tee -a /etc/ntp.conf
 
 # Enable NTP
-sudo chkconfig ntpd on
+sudo yum install -y ntp
+sudo systemctl start ntpd

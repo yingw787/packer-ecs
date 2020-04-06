@@ -51,6 +51,10 @@
         },
         {
             "type": "shell",
+            "script": "scripts/cleanup.sh"
+        },
+        {
+            "type": "shell",
             "inline": [
                 "sudo yum -y -x docker\\* -x ecs\\* update",
                 "sudo yum -y install aws-cfn-bootstrap awslogs jq"

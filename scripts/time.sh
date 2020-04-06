@@ -16,4 +16,4 @@ echo "server 169.254.169.123 prefer iburst" | sudo tee -a /etc/ntp.conf
 
 # Enable NTP
 sudo yum install -y ntp
-sudo systemctl ntpd start
+sudo systemctl start ntpd

@@ -73,7 +73,7 @@ EOF
 
 # Start services
 sudo service awslogs start
-sudo systemctl docker start
+sudo systemctl start docker
 sudo service docker start
 sudo start ecs
 

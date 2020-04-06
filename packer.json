@@ -17,6 +17,14 @@
             "ssh_username": "ec2-user",
             "associate_public_ip_address": "true",
             "ami_name": "docker-in-aws-ecs {{timestamp}}",
+            "launch_block_devices_mappings": [
+                {
+                    "device_name": "/dev/xvdcy",
+                    "volume_size": 20,
+                    "volume_type": "gp2",
+                    "delete_on_termination": true
+                }
+            ],
             "tags": {
                 "Name": "Docker in AWS ECS Base Image 2020.04.h",
                 "SourceAMI": "{{ .SourceAMI }}",

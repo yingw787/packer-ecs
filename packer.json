@@ -36,8 +36,20 @@
     "provisioners": [
         {
             "type": "shell",
+            "script": "scripts/storage.sh"
+        },
+        {
+            "type": "shell",
+            "script": "scripts/time.sh",
+            "environment_vars": [
+                "TIMEZONE={{user `timezone`}}"
+            ]
+        },
+        {
+            "type": "shell",
             "inline": [
-                "sudo yum -y -x docker\\* -x ecs\\* update"
+                "sudo yum -y -x docker\\* -x ecs\\* update",
+                "sudo yum -y install aws-cfn-bootstrap awslogs jq"
             ]
         }
     ],
